@@ -11,6 +11,42 @@
 std::map<std::string, Texture2D>    ResourceManager::Textures;
 std::map<std::string, Shader>       ResourceManager::Shaders;
 
+namespace {
+
+std::string ResolveResourcePath(const char* requested) {
+	if (requested == nullptr) {
+		return std::string();
+	}
+
+	auto exists = [](const std::string& path) -> bool {
+		std::ifstream file(path);
+		return file.good();
+	};
+
+	std::string candidate = requested;
+	if (exists(candidate)) {
+		return candidate;
+	}
+
+	// Look for the resource under alternative roots when running from a different working directory.
+	const char* prefixes[] = {
+		"deps/",
+		"../",
+		"../deps/"
+	};
+
+	for (const char* prefix : prefixes) {
+		std::string prefixed = std::string(prefix) + requested;
+		if (exists(prefixed)) {
+			return prefixed;
+		}
+	}
+
+	return candidate;
+}
+
+}
+
 
 Shader ResourceManager::LoadShader(const GLchar *vShaderFile, const GLchar *fShaderFile, const GLchar *gShaderFile, std::string name)
 {
@@ -46,6 +82,9 @@ void ResourceManager::Clear()
 
 Shader ResourceManager::loadShaderFromFile(const GLchar *vShaderFile, const GLchar *fShaderFile, const GLchar *gShaderFile)
 {
+	std::string vertexPath = ResolveResourcePath(vShaderFile);
+	std::string fragmentPath = ResolveResourcePath(fShaderFile);
+	std::string geometryPath = gShaderFile ? ResolveResourcePath(gShaderFile) : std::string();
     // 1. Retrieve the vertex/fragment source code from filePath
     std::string vertexCode;
     std::string fragmentCode;
@@ -53,8 +92,8 @@ Shader ResourceManager::loadShaderFromFile(const GLchar *vShaderFile, const GLch
     try
     {
         // Open files
-        std::ifstream vertexShaderFile(vShaderFile);
-        std::ifstream fragmentShaderFile(fShaderFile);
+		std::ifstream vertexShaderFile(vertexPath);
+		std::ifstream fragmentShaderFile(fragmentPath);
         std::stringstream vShaderStream, fShaderStream;
         // Read file's buffer contents into streams
         vShaderStream << vertexShaderFile.rdbuf();
@@ -66,9 +105,9 @@ Shader ResourceManager::loadShaderFromFile(const GLchar *vShaderFile, const GLch
         vertexCode = vShaderStream.str();
         fragmentCode = fShaderStream.str();
         // If geometry shader path is present, also load a geometry shader
-        if (gShaderFile != nullptr)
+		if (gShaderFile != nullptr)
         {
-            std::ifstream geometryShaderFile(gShaderFile);
+			std::ifstream geometryShaderFile(geometryPath);
             std::stringstream gShaderStream;
             gShaderStream << geometryShaderFile.rdbuf();
             geometryShaderFile.close();
