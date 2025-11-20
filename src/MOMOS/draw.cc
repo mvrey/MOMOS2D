@@ -31,19 +31,22 @@ namespace MOMOS {
 
 
 	void DrawSetStrokeColor(unsigned char R, unsigned char G, unsigned char B, unsigned char Alpha) {
-		glColor4f(R, G, B, Alpha);
+		const float norm = 1.0f / 255.0f;
+		glColor4f(R * norm, G * norm, B * norm, Alpha * norm);
 	}
 
 
 	void DrawSetFillColor(unsigned char R, unsigned char G, unsigned char B, unsigned char Alpha) {
-		glColor4f(R, G, B, Alpha);
+		const float norm = 1.0f / 255.0f;
+		glColor4f(R * norm, G * norm, B * norm, Alpha * norm);
 		unsigned int color = glfonsRGBA(R, G, B, Alpha);
 		fonsSetColor(fs, color);
 	}
 
 
 	void DrawClear(unsigned char R, unsigned char G, unsigned char B, unsigned char Alpha) {
-		glClearColor(R, G, B, Alpha);
+		const float norm = 1.0f / 255.0f;
+		glClearColor(R * norm, G * norm, B * norm, Alpha * norm);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 
