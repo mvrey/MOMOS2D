@@ -16,6 +16,9 @@ namespace MOMOS {
 	extern bool mouserightdown;
 	extern bool mouseleftup;
 	extern bool mouserightup;
+	extern double mouse_scroll_x;
+	extern double mouse_scroll_y;
+	extern unsigned long long frame_counter;
 	extern int last_key_pressed;
 
 	//Global sprite renderer

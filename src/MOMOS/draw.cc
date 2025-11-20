@@ -26,7 +26,7 @@ namespace MOMOS {
 
 
 	void DrawEnd() {
-
+		glFlush();
 	}
 
 
@@ -97,7 +97,7 @@ namespace MOMOS {
 
 
 	void DrawSetTextBlur(float blur_radius) {
-
+		fonsSetBlur(fs, blur_radius);
 	}
 
 

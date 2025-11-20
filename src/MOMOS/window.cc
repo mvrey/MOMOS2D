@@ -13,6 +13,9 @@ namespace MOMOS {
 	bool mouserightdown = false;
 	bool mouseleftup = false;
 	bool mouserightup = false;
+	double mouse_scroll_x = 0.0;
+	double mouse_scroll_y = 0.0;
+	unsigned long long frame_counter = 0;
 	int last_key_pressed = -1;
 
 	void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
@@ -29,20 +32,27 @@ namespace MOMOS {
 			if (button == GLFW_MOUSE_BUTTON_LEFT) {
 				mouseleftup = false;
 				mouseleftdown = true;
-			} else {
+			} else if (button == GLFW_MOUSE_BUTTON_RIGHT) {
 				mouserightup = false;
 				mouserightdown = true;
 			}
 			break;
 		case GLFW_RELEASE:
 			if (button == GLFW_MOUSE_BUTTON_LEFT) {
+				mouseleftdown = false;
 				mouseleftup = true;
-			} else {
+			} else if (button == GLFW_MOUSE_BUTTON_RIGHT) {
+				mouserightdown = false;
 				mouserightup = true;
 			}
 			break;
 		}
-		
+	}
+
+
+	void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
+		mouse_scroll_x += xoffset;
+		mouse_scroll_y += yoffset;
 	}
 
 	void WindowInit(unsigned int width, unsigned int height) {
@@ -75,22 +85,32 @@ namespace MOMOS {
 		//Set input callback
 		glfwSetKeyCallback(win, key_callback);
 		glfwSetMouseButtonCallback(win, mouse_button_callback);
+		glfwSetScrollCallback(win, scroll_callback);
 
 		ResourceManager::initSpriteShader();
 
 		//Hide cursor by default
 		WindowSetMouseVisibility(false);
+
+		mouse_scroll_x = mouse_scroll_y = 0.0;
+		frame_counter = 0;
 	}
 
 
 	void WindowFrame() {
 		glfwSwapBuffers(win);
 		glfwPollEvents();
+		++frame_counter;
 	}
 
 
 	void WindowDestroy() {
-
+		if (win != nullptr) {
+			glfwDestroyWindow(win);
+			win = nullptr;
+		}
+		ResourceManager::Clear();
+		glfwTerminate();
 	}
 
 

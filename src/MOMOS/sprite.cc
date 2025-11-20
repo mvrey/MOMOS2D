@@ -4,41 +4,129 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <cstring>
+#include <vector>
 
 #include <MOMOS/shader.h>
 #include <MOMOS/texture.h>
 
 namespace MOMOS {
 
-	SpriteRenderer* renderer;
+	SpriteRenderer* renderer = nullptr;
+
+namespace {
+
+void EnsureRenderer() {
+	if (MOMOS::renderer == nullptr) {
+		MOMOS::renderer = new SpriteRenderer(ResourceManager::GetShader("sprite"));
+	}
+}
+
+bool IsManagedTexture(Texture2D* texture) {
+	for (auto& entry : ResourceManager::Textures) {
+		if (&entry.second == texture) {
+			return true;
+		}
+	}
+	return false;
+}
+
+}
 
 	SpriteHandle SpriteFromFile(const char *path) {
+		EnsureRenderer();
 		// Load textures
 		Texture2D* texture = ResourceManager::LoadTexture(path, GL_TRUE, path);
-		// Set render-specific controls
-		MOMOS::renderer = new SpriteRenderer(ResourceManager::GetShader("sprite"));
-
 		return texture;
 	}
 
 
 	SpriteHandle SpriteFromMemory(int width, int height, const unsigned char *data_RGBA) {
-		return nullptr;
+		if (width <= 0 || height <= 0 || data_RGBA == nullptr) {
+			return nullptr;
+		}
+
+		EnsureRenderer();
+
+		Texture2D* texture = new Texture2D();
+		texture->Internal_Format = GL_RGBA;
+		texture->Image_Format = GL_RGBA;
+		texture->Wrap_S = GL_CLAMP_TO_EDGE;
+		texture->Wrap_T = GL_CLAMP_TO_EDGE;
+
+		const size_t byte_count = static_cast<size_t>(width) * static_cast<size_t>(height) * 4;
+		std::vector<unsigned char> buffer(data_RGBA, data_RGBA + byte_count);
+		texture->Generate(static_cast<GLuint>(width), static_cast<GLuint>(height), buffer.data());
+
+		return texture;
 	}
 
 
-	void SpriteUpdateFromMemory(SpriteHandle, const unsigned char *data_RGBA) {
+	void SpriteUpdateFromMemory(SpriteHandle img, const unsigned char *data_RGBA) {
+		if (img == nullptr || data_RGBA == nullptr) {
+			return;
+		}
 
+		Texture2D* texture = static_cast<Texture2D*>(img);
+		const size_t byte_count = static_cast<size_t>(texture->Width) * static_cast<size_t>(texture->Height) * texture->BytesPerPixel();
+		if (byte_count == 0) {
+			return;
+		}
+
+		std::vector<unsigned char> buffer(data_RGBA, data_RGBA + byte_count);
+		texture->Generate(texture->Width, texture->Height, buffer.data());
 	}
 
 
 	SpriteHandle SubSprite(SpriteHandle orig, int x, int y, int width, int height) {
-		return nullptr;
+		if (orig == nullptr || width <= 0 || height <= 0) {
+			return nullptr;
+		}
+
+		Texture2D* source = static_cast<Texture2D*>(orig);
+		if (x < 0 || y < 0 || x + width > static_cast<int>(source->Width) || y + height > static_cast<int>(source->Height)) {
+			return nullptr;
+		}
+
+		const unsigned char* data = source->PixelData();
+		unsigned int bpp = source->BytesPerPixel();
+		if (data == nullptr || bpp == 0) {
+			return nullptr;
+		}
+
+		std::vector<unsigned char> buffer(static_cast<size_t>(width) * static_cast<size_t>(height) * bpp);
+		for (int row = 0; row < height; ++row) {
+			size_t src_index = (static_cast<size_t>(y + row) * source->Width + static_cast<size_t>(x)) * bpp;
+			size_t dst_index = static_cast<size_t>(row) * width * bpp;
+			std::memcpy(buffer.data() + dst_index, data + src_index, static_cast<size_t>(width) * bpp);
+		}
+
+		Texture2D* texture = new Texture2D();
+		texture->Internal_Format = source->Internal_Format;
+		texture->Image_Format = source->Image_Format;
+		texture->Wrap_S = source->Wrap_S;
+		texture->Wrap_T = source->Wrap_T;
+		texture->Filter_Min = source->Filter_Min;
+		texture->Filter_Max = source->Filter_Max;
+		texture->Generate(static_cast<GLuint>(width), static_cast<GLuint>(height), buffer.data());
+
+		return texture;
 	}
 
 
 	void SpriteRelease(SpriteHandle img) {
+		if (img == nullptr) {
+			return;
+		}
 
+		Texture2D* texture = static_cast<Texture2D*>(img);
+		if (IsManagedTexture(texture)) {
+			return;
+		}
+
+		if (texture->ID != 0) {
+			glDeleteTextures(1, &texture->ID);
+		}
+		delete texture;
 	}
 
 
