@@ -3,6 +3,7 @@
 #include <glm/glm.hpp>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <cstring>
 
 #include <MOMOS/shader.h>
 #include <MOMOS/texture.h>
@@ -53,9 +54,75 @@ namespace MOMOS {
 	}
 
 
-	void SpriteGetPixel(SpriteHandle img, int x, int y, unsigned char outRGBA[4]) {
-
+void SpriteGetPixel(SpriteHandle img, int x, int y, unsigned char outRGBA[4]) {
+	if (outRGBA == nullptr) {
+		return;
 	}
+
+	outRGBA[0] = outRGBA[1] = outRGBA[2] = 0;
+	outRGBA[3] = 255;
+
+	if (img == nullptr) {
+		return;
+	}
+
+	Texture2D* tex = static_cast<Texture2D*>(img);
+	if (tex->PixelData() == nullptr || tex->BytesPerPixel() == 0) {
+		return;
+	}
+
+	if (x < 0 || y < 0 || x >= static_cast<int>(tex->Width) || y >= static_cast<int>(tex->Height)) {
+		return;
+	}
+
+	const unsigned char* data = tex->PixelData();
+	const unsigned int bpp = tex->BytesPerPixel();
+	const size_t index = (static_cast<size_t>(y) * tex->Width + static_cast<size_t>(x)) * bpp;
+
+	unsigned char r = 0;
+	unsigned char g = 0;
+	unsigned char b = 0;
+	unsigned char a = 255;
+
+	switch (tex->Image_Format) {
+	case GL_BGRA:
+		b = data[index + 0];
+		g = data[index + 1];
+		r = data[index + 2];
+		if (bpp > 3) a = data[index + 3];
+		break;
+	case GL_BGR:
+		b = data[index + 0];
+		g = data[index + 1];
+		r = data[index + 2];
+		break;
+	case GL_RGBA:
+		r = data[index + 0];
+		g = data[index + 1];
+		b = data[index + 2];
+		if (bpp > 3) a = data[index + 3];
+		break;
+	case GL_RGB:
+		r = data[index + 0];
+		g = data[index + 1];
+		b = data[index + 2];
+		break;
+	case GL_ALPHA:
+		a = data[index];
+		break;
+	case GL_RED:
+	default:
+		r = data[index];
+		g = r;
+		b = r;
+		break;
+	}
+
+	outRGBA[0] = r;
+	outRGBA[1] = g;
+	outRGBA[2] = b;
+	outRGBA[3] = a;
+}
 
 
 	void DrawSprite(SpriteHandle img, float x, float y) {

@@ -2,6 +2,7 @@
 #define TEXTURE_H
 
 #include <GL/glew.h>
+#include <vector>
 
 // Texture2D is able to store and configure a texture in OpenGL.
 // It also hosts utility functions for easy management.
@@ -29,7 +30,17 @@ public:
 
 
 
-	unsigned char* data;
+    const unsigned char* PixelData() const {
+        return pixel_data_.empty() ? nullptr : pixel_data_.data();
+    }
+
+    unsigned int BytesPerPixel() const {
+        return bytes_per_pixel_;
+    }
+
+private:
+    std::vector<unsigned char> pixel_data_;
+    unsigned int bytes_per_pixel_;
 };
 
 #endif
