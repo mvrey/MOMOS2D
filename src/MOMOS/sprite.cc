@@ -77,7 +77,11 @@ namespace MOMOS {
 
 
 	void DrawSprite(SpriteHandle img, const SpriteTransform &st) {
-
+		Texture2D* tex = static_cast<Texture2D*>(img);
+		MOMOS::renderer->DrawSprite(*tex,glm::vec2(st.x,st.y),
+			glm::vec2(tex->Width * st.scale_x, tex->Height * st.scale_y),
+			st.angle,
+			glm::vec3(1.0f, 1.0f, 1.0f));
 	}
 
 } /* MOMOS */

@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MOMOS">
+      <UniqueIdentifier>{9435521C-00A0-0693-49DE-B738B587E4E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps">
+      <UniqueIdentifier>{15105DD2-01DD-B7DD-2AF6-A5851622ED6B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glfw3_2_1">
+      <UniqueIdentifier>{154F49A9-0133-0AFF-6A93-04525696F480}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glfw3_2_1\include">
+      <UniqueIdentifier>{15277D59-0137-292A-6AF0-8D48561F18C3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glfw3_2_1\include\GLFW">
+      <UniqueIdentifier>{21E67200-8DC9-8140-96CC-AF7C022F4891}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glfw3_2_1\src">
+      <UniqueIdentifier>{B93C09BD-A536-320F-8EA3-C81F7A3C987B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glew2_0_0">
+      <UniqueIdentifier>{50F13C5C-3CD5-FDB1-A535-F8049138E833}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glew2_0_0\include">
+      <UniqueIdentifier>{50D4A0E7-3CE4-4CB8-A59D-B1D691CC3B51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glew2_0_0\include\GL">
+      <UniqueIdentifier>{1FC30DB8-8BDB-F4E1-5488-847BC05F897B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glew2_0_0\src">
+      <UniqueIdentifier>{74842929-607E-527B-49EB-E88B3584B8E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\MOMOS">
+      <UniqueIdentifier>{F00E610C-5CCF-DC42-250A-26C09189211F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\chipmunk-7.0.1">
+      <UniqueIdentifier>{511D2BFD-BD54-7394-C65E-D7B732159A8D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\chipmunk-7.0.1\include">
+      <UniqueIdentifier>{5171776E-BD54-86AE-C657-B4EA32BA4CFF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\chipmunk-7.0.1\include\chipmunk">
+      <UniqueIdentifier>{4C42AB12-38BF-9E55-613C-9F694D183BE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\chipmunk-7.0.1\src">
+      <UniqueIdentifier>{F5C85FAD-61D6-8D93-EABC-897E56C9594A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\fontstash">
+      <UniqueIdentifier>{3FB8A590-ABCE-A326-F445-2F48609B74AE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\SOIL">
+      <UniqueIdentifier>{C810B35E-34D1-2E95-FD0B-7812698B7371}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\SOIL\src">
+      <UniqueIdentifier>{EC9F12B0-58B6-1046-A12D-9C670D83E1CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\sqlite3">
+      <UniqueIdentifier>{96F428C0-82ED-4712-AB1F-2D979777271E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\deps\glfw3_2_1\include\GLFW\glfw3.h">
+      <Filter>src\deps\glfw3_2_1\include\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\include\GLFW\glfw3native.h">
+      <Filter>src\deps\glfw3_2_1\include\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\cocoa_joystick.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\cocoa_platform.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\egl_context.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\glx_context.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\internal.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\linux_joystick.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\mir_platform.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\nsgl_context.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\posix_time.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\posix_tls.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\wgl_context.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\win32_joystick.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\win32_platform.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\wl_platform.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\x11_platform.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glfw3_2_1\src\xkb_unicode.h">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glew2_0_0\include\GL\eglew.h">
+      <Filter>src\deps\glew2_0_0\include\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glew2_0_0\include\GL\glew.h">
+      <Filter>src\deps\glew2_0_0\include\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glew2_0_0\include\GL\glxew.h">
+      <Filter>src\deps\glew2_0_0\include\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\glew2_0_0\include\GL\wglew.h">
+      <Filter>src\deps\glew2_0_0\include\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\referenced.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ref_ptr.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\types.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Window.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\draw.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\input.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\math.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\momos.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\resource_manager.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\shader.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\sprite.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\sprite_renderer.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\texture.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\time.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\window.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\chipmunk.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\chipmunk_ffi.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\chipmunk_private.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\chipmunk_types.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\chipmunk_unsafe.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpArbiter.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpBB.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpBody.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpConstraint.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpDampedRotarySpring.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpDampedSpring.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpGearJoint.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpGrooveJoint.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpHastySpace.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpMarch.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpPinJoint.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpPivotJoint.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpPolyline.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpPolyShape.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpRatchetJoint.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpRobust.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpRotaryLimitJoint.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpShape.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpSimpleMotor.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpSlideJoint.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpSpace.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpSpatialIndex.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpTransform.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpVect.h">
+      <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\chipmunk-7.0.1\src\prime.h">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\fontstash\fontstash.h">
+      <Filter>include\fontstash</Filter>
+    </ClInclude>
+    <ClInclude Include="include\fontstash\glfontstash.h">
+      <Filter>include\fontstash</Filter>
+    </ClInclude>
+    <ClInclude Include="include\fontstash\stb_truetype.h">
+      <Filter>include\fontstash</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\SOIL\src\image_DXT.h">
+      <Filter>src\deps\SOIL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\SOIL\src\image_helper.h">
+      <Filter>src\deps\SOIL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\SOIL\src\SOIL.h">
+      <Filter>src\deps\SOIL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\SOIL\src\stbi_DDS_aug.h">
+      <Filter>src\deps\SOIL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\SOIL\src\stbi_DDS_aug_c.h">
+      <Filter>src\deps\SOIL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\SOIL\src\stb_image_aug.h">
+      <Filter>src\deps\SOIL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\sqlite3\sqlite3.h">
+      <Filter>src\deps\sqlite3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deps\sqlite3\sqlite3ext.h">
+      <Filter>src\deps\sqlite3</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\draw.cc">
+      <Filter>src\MOMOS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\input.cc">
+      <Filter>src\MOMOS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\math.cc">
+      <Filter>src\MOMOS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\resource_manager.cc">
+      <Filter>src\MOMOS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\shader.cc">
+      <Filter>src\MOMOS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\sprite.cc">
+      <Filter>src\MOMOS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\sprite_renderer.cc">
+      <Filter>src\MOMOS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\texture.cc">
+      <Filter>src\MOMOS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\time.cc">
+      <Filter>src\MOMOS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\window.cc">
+      <Filter>src\MOMOS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\cocoa_time.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\context.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\egl_context.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\glx_context.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\init.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\input.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\linux_joystick.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\mir_init.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\mir_monitor.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\mir_window.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\monitor.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\posix_time.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\posix_tls.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\vulkan.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\wgl_context.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\win32_init.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\win32_joystick.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\win32_monitor.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\win32_time.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\win32_tls.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\win32_window.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\window.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\wl_init.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\wl_monitor.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\wl_window.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\x11_init.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\x11_monitor.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\x11_window.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\xkb_unicode.c">
+      <Filter>src\deps\glfw3_2_1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glew2_0_0\src\glew.c">
+      <Filter>src\deps\glew2_0_0\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glew2_0_0\src\glewinfo.c">
+      <Filter>src\deps\glew2_0_0\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\glew2_0_0\src\visualinfo.c">
+      <Filter>src\deps\glew2_0_0\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\chipmunk.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpArbiter.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpArray.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpBBTree.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpBody.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpCollision.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpConstraint.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpDampedRotarySpring.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpDampedSpring.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpGearJoint.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpGrooveJoint.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpHashSet.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpHastySpace.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpMarch.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpPinJoint.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpPivotJoint.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpPolyline.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpPolyShape.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpRatchetJoint.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpRobust.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpRotaryLimitJoint.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpShape.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSimpleMotor.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSlideJoint.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSpace.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSpaceComponent.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSpaceDebug.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSpaceHash.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSpaceQuery.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSpaceStep.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSpatialIndex.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSweep1D.c">
+      <Filter>src\deps\chipmunk-7.0.1\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\SOIL\src\image_DXT.c">
+      <Filter>src\deps\SOIL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\SOIL\src\image_helper.c">
+      <Filter>src\deps\SOIL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\SOIL\src\SOIL.c">
+      <Filter>src\deps\SOIL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\SOIL\src\stb_image_aug.c">
+      <Filter>src\deps\SOIL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\sqlite3\shell.c">
+      <Filter>src\deps\sqlite3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deps\sqlite3\sqlite3.c">
+      <Filter>src\deps\sqlite3</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -4,7 +4,7 @@
 namespace MOMOS {
   
 	double Time() {
-		return glfwGetTime();
+		return glfwGetTime() * 1000.0;
 	}
 
 

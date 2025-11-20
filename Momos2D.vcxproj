@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{26BEE335-929D-62D1-9BB5-EDA70714C932}</ProjectGuid>
+    <RootNamespace>Momos2D</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>build\windows\release\</OutDir>
+    <IntDir>obj\x32\Release\</IntDir>
+    <TargetName>Momos2D</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>build\windows\release\</OutDir>
+    <IntDir>obj\x64\Release\</IntDir>
+    <TargetName>Momos2D</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>build\windows\debug\</OutDir>
+    <IntDir>obj\x32\Debug\</IntDir>
+    <TargetName>Momos2D</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>build\windows\debug\</OutDir>
+    <IntDir>obj\x64\Debug\</IntDir>
+    <TargetName>Momos2D</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MinSpace</Optimization>
+      <AdditionalIncludeDirectories>include;src;src\deps\glfw3_2_1\include;src\deps\glfw3_2_1\src;src\deps\glew2_0_0\include;src\deps\glew2_0_0\src;src\deps\glm-0_9_8_1;src\deps\chipmunk-7.0.1\include;src\deps\SOIL\src;src\deps\sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_GLFW_WIN32;_GLFW_USE_OPENGL;LUA_COMPAT_MODULE;TINYOBJLOADER_IMPLEMENTATION;WIN32;_WIN32;_WINDOWS;_CONSOLE;_WIN32_WINNT=0x0502;AL_BUILD_LIBRARY;AL_ALEXT_PROTOTYPES;_LARGEFILE_SOURCE;_LARGE_FILES;restrict=;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;strcasecmp=_stricmp;strncasecmp=_strnicmp;AL_LIBTYPE_STATIC;DYNLOAD=1;HAVE_CONFIG_H;ALURE_BUILD_LIBRARY;_DEBUG;GLEW_STATIC;CMAKE_USE_WIN32_THREADS_INIT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <DiagnosticsFormat>Caret</DiagnosticsFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_GLFW_WIN32;_GLFW_USE_OPENGL;LUA_COMPAT_MODULE;TINYOBJLOADER_IMPLEMENTATION;WIN32;_WIN32;_WINDOWS;_CONSOLE;_WIN32_WINNT=0x0502;AL_BUILD_LIBRARY;AL_ALEXT_PROTOTYPES;_LARGEFILE_SOURCE;_LARGE_FILES;restrict=;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;strcasecmp=_stricmp;strncasecmp=_strnicmp;AL_LIBTYPE_STATIC;DYNLOAD=1;HAVE_CONFIG_H;ALURE_BUILD_LIBRARY;_DEBUG;GLEW_STATIC;CMAKE_USE_WIN32_THREADS_INIT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;src;src\deps\glfw3_2_1\include;src\deps\glfw3_2_1\src;src\deps\glew2_0_0\include;src\deps\glew2_0_0\src;src\deps\glm-0_9_8_1;src\deps\chipmunk-7.0.1\include;src\deps\SOIL\src;src\deps\sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;winmm.lib;ws2_32.lib;;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)Momos2D.lib</OutputFile>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MinSpace</Optimization>
+      <AdditionalIncludeDirectories>include;src;src\deps\glfw3_2_1\include;src\deps\glfw3_2_1\src;src\deps\glew2_0_0\include;src\deps\glew2_0_0\src;src\deps\glm-0_9_8_1;src\deps\chipmunk-7.0.1\include;src\deps\SOIL\src;src\deps\sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_GLFW_WIN32;_GLFW_USE_OPENGL;LUA_COMPAT_MODULE;TINYOBJLOADER_IMPLEMENTATION;WIN32;_WIN32;_WINDOWS;_CONSOLE;_WIN32_WINNT=0x0502;AL_BUILD_LIBRARY;AL_ALEXT_PROTOTYPES;_LARGEFILE_SOURCE;_LARGE_FILES;restrict=;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;strcasecmp=_stricmp;strncasecmp=_strnicmp;AL_LIBTYPE_STATIC;DYNLOAD=1;HAVE_CONFIG_H;ALURE_BUILD_LIBRARY;_DEBUG;GLEW_STATIC;CMAKE_USE_WIN32_THREADS_INIT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <DiagnosticsFormat>Caret</DiagnosticsFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_GLFW_WIN32;_GLFW_USE_OPENGL;LUA_COMPAT_MODULE;TINYOBJLOADER_IMPLEMENTATION;WIN32;_WIN32;_WINDOWS;_CONSOLE;_WIN32_WINNT=0x0502;AL_BUILD_LIBRARY;AL_ALEXT_PROTOTYPES;_LARGEFILE_SOURCE;_LARGE_FILES;restrict=;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;strcasecmp=_stricmp;strncasecmp=_strnicmp;AL_LIBTYPE_STATIC;DYNLOAD=1;HAVE_CONFIG_H;ALURE_BUILD_LIBRARY;_DEBUG;GLEW_STATIC;CMAKE_USE_WIN32_THREADS_INIT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;src;src\deps\glfw3_2_1\include;src\deps\glfw3_2_1\src;src\deps\glew2_0_0\include;src\deps\glew2_0_0\src;src\deps\glm-0_9_8_1;src\deps\chipmunk-7.0.1\include;src\deps\SOIL\src;src\deps\sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;winmm.lib;ws2_32.lib;;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)Momos2D.lib</OutputFile>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;src;src\deps\glfw3_2_1\include;src\deps\glfw3_2_1\src;src\deps\glew2_0_0\include;src\deps\glew2_0_0\src;src\deps\glm-0_9_8_1;src\deps\chipmunk-7.0.1\include;src\deps\SOIL\src;src\deps\sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_GLFW_WIN32;_GLFW_USE_OPENGL;LUA_COMPAT_MODULE;TINYOBJLOADER_IMPLEMENTATION;WIN32;_WIN32;_WINDOWS;_CONSOLE;_WIN32_WINNT=0x0502;AL_BUILD_LIBRARY;AL_ALEXT_PROTOTYPES;_LARGEFILE_SOURCE;_LARGE_FILES;restrict=;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;strcasecmp=_stricmp;strncasecmp=_strnicmp;AL_LIBTYPE_STATIC;DYNLOAD=1;HAVE_CONFIG_H;ALURE_BUILD_LIBRARY;_DEBUG;GLEW_STATIC;CMAKE_USE_WIN32_THREADS_INIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(IntDir)Momos2D.compile.pdb</ProgramDataBaseFileName>
+      <DiagnosticsFormat>Caret</DiagnosticsFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_GLFW_WIN32;_GLFW_USE_OPENGL;LUA_COMPAT_MODULE;TINYOBJLOADER_IMPLEMENTATION;WIN32;_WIN32;_WINDOWS;_CONSOLE;_WIN32_WINNT=0x0502;AL_BUILD_LIBRARY;AL_ALEXT_PROTOTYPES;_LARGEFILE_SOURCE;_LARGE_FILES;restrict=;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;strcasecmp=_stricmp;strncasecmp=_strnicmp;AL_LIBTYPE_STATIC;DYNLOAD=1;HAVE_CONFIG_H;ALURE_BUILD_LIBRARY;_DEBUG;GLEW_STATIC;CMAKE_USE_WIN32_THREADS_INIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;src;src\deps\glfw3_2_1\include;src\deps\glfw3_2_1\src;src\deps\glew2_0_0\include;src\deps\glew2_0_0\src;src\deps\glm-0_9_8_1;src\deps\chipmunk-7.0.1\include;src\deps\SOIL\src;src\deps\sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)Momos2D.pdb</ProgramDatabaseFile>
+      <AdditionalDependencies>opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;winmm.lib;ws2_32.lib;;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)Momos2D.lib</OutputFile>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;src;src\deps\glfw3_2_1\include;src\deps\glfw3_2_1\src;src\deps\glew2_0_0\include;src\deps\glew2_0_0\src;src\deps\glm-0_9_8_1;src\deps\chipmunk-7.0.1\include;src\deps\SOIL\src;src\deps\sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_GLFW_WIN32;_GLFW_USE_OPENGL;LUA_COMPAT_MODULE;TINYOBJLOADER_IMPLEMENTATION;WIN32;_WIN32;_WINDOWS;_CONSOLE;_WIN32_WINNT=0x0502;AL_BUILD_LIBRARY;AL_ALEXT_PROTOTYPES;_LARGEFILE_SOURCE;_LARGE_FILES;restrict=;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;strcasecmp=_stricmp;strncasecmp=_strnicmp;AL_LIBTYPE_STATIC;DYNLOAD=1;HAVE_CONFIG_H;ALURE_BUILD_LIBRARY;_DEBUG;GLEW_STATIC;CMAKE_USE_WIN32_THREADS_INIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(IntDir)Momos2D.compile.pdb</ProgramDataBaseFileName>
+      <DiagnosticsFormat>Caret</DiagnosticsFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_GLFW_WIN32;_GLFW_USE_OPENGL;LUA_COMPAT_MODULE;TINYOBJLOADER_IMPLEMENTATION;WIN32;_WIN32;_WINDOWS;_CONSOLE;_WIN32_WINNT=0x0502;AL_BUILD_LIBRARY;AL_ALEXT_PROTOTYPES;_LARGEFILE_SOURCE;_LARGE_FILES;restrict=;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;strcasecmp=_stricmp;strncasecmp=_strnicmp;AL_LIBTYPE_STATIC;DYNLOAD=1;HAVE_CONFIG_H;ALURE_BUILD_LIBRARY;_DEBUG;GLEW_STATIC;CMAKE_USE_WIN32_THREADS_INIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;src;src\deps\glfw3_2_1\include;src\deps\glfw3_2_1\src;src\deps\glew2_0_0\include;src\deps\glew2_0_0\src;src\deps\glm-0_9_8_1;src\deps\chipmunk-7.0.1\include;src\deps\SOIL\src;src\deps\sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)Momos2D.pdb</ProgramDatabaseFile>
+      <AdditionalDependencies>opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;winmm.lib;ws2_32.lib;;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)Momos2D.lib</OutputFile>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\deps\glfw3_2_1\include\GLFW\glfw3.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\include\GLFW\glfw3native.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\cocoa_joystick.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\cocoa_platform.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\egl_context.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\glx_context.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\internal.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\linux_joystick.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\mir_platform.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\nsgl_context.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\posix_time.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\posix_tls.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\wgl_context.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\win32_joystick.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\win32_platform.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\wl_platform.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\x11_platform.h" />
+    <ClInclude Include="src\deps\glfw3_2_1\src\xkb_unicode.h" />
+    <ClInclude Include="src\deps\glew2_0_0\include\GL\eglew.h" />
+    <ClInclude Include="src\deps\glew2_0_0\include\GL\glew.h" />
+    <ClInclude Include="src\deps\glew2_0_0\include\GL\glxew.h" />
+    <ClInclude Include="src\deps\glew2_0_0\include\GL\wglew.h" />
+    <ClInclude Include="include\referenced.h" />
+    <ClInclude Include="include\ref_ptr.h" />
+    <ClInclude Include="include\types.h" />
+    <ClInclude Include="include\Window.h" />
+    <ClInclude Include="include\MOMOS\draw.h" />
+    <ClInclude Include="include\MOMOS\input.h" />
+    <ClInclude Include="include\MOMOS\math.h" />
+    <ClInclude Include="include\MOMOS\momos.h" />
+    <ClInclude Include="include\MOMOS\resource_manager.h" />
+    <ClInclude Include="include\MOMOS\shader.h" />
+    <ClInclude Include="include\MOMOS\sprite.h" />
+    <ClInclude Include="include\MOMOS\sprite_renderer.h" />
+    <ClInclude Include="include\MOMOS\texture.h" />
+    <ClInclude Include="include\MOMOS\time.h" />
+    <ClInclude Include="include\MOMOS\window.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\chipmunk.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\chipmunk_ffi.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\chipmunk_private.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\chipmunk_types.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\chipmunk_unsafe.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpArbiter.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpBB.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpBody.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpConstraint.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpDampedRotarySpring.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpDampedSpring.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpGearJoint.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpGrooveJoint.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpHastySpace.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpMarch.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpPinJoint.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpPivotJoint.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpPolyline.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpPolyShape.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpRatchetJoint.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpRobust.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpRotaryLimitJoint.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpShape.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpSimpleMotor.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpSlideJoint.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpSpace.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpSpatialIndex.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpTransform.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\cpVect.h" />
+    <ClInclude Include="src\deps\chipmunk-7.0.1\src\prime.h" />
+    <ClInclude Include="include\fontstash\fontstash.h" />
+    <ClInclude Include="include\fontstash\glfontstash.h" />
+    <ClInclude Include="include\fontstash\stb_truetype.h" />
+    <ClInclude Include="src\deps\SOIL\src\image_DXT.h" />
+    <ClInclude Include="src\deps\SOIL\src\image_helper.h" />
+    <ClInclude Include="src\deps\SOIL\src\SOIL.h" />
+    <ClInclude Include="src\deps\SOIL\src\stbi_DDS_aug.h" />
+    <ClInclude Include="src\deps\SOIL\src\stbi_DDS_aug_c.h" />
+    <ClInclude Include="src\deps\SOIL\src\stb_image_aug.h" />
+    <ClInclude Include="src\deps\sqlite3\sqlite3.h" />
+    <ClInclude Include="src\deps\sqlite3\sqlite3ext.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cc">
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\draw.cc">
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\input.cc">
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\math.cc">
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\resource_manager.cc">
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\shader.cc">
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\sprite.cc">
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\sprite_renderer.cc">
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\texture.cc">
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\time.cc">
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\window.cc">
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\cocoa_time.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\context.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\egl_context.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\glx_context.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\init.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\input.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)1\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)1\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)1\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)1\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\linux_joystick.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\mir_init.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\mir_monitor.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\mir_window.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\monitor.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\posix_time.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\posix_tls.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\vulkan.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\wgl_context.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\win32_init.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\win32_joystick.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\win32_monitor.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\win32_time.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\win32_tls.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\win32_window.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\window.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)1\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)1\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)1\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)1\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\wl_init.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\wl_monitor.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\wl_window.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\x11_init.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\x11_monitor.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\x11_window.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glfw3_2_1\src\xkb_unicode.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glew2_0_0\src\glew.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\glew2_0_0\src\glewinfo.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\glew2_0_0\src\visualinfo.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\chipmunk.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpArbiter.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpArray.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpBBTree.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpBody.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpCollision.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpConstraint.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpDampedRotarySpring.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpDampedSpring.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpGearJoint.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpGrooveJoint.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpHashSet.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpHastySpace.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpMarch.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpPinJoint.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpPivotJoint.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpPolyline.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpPolyShape.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpRatchetJoint.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpRobust.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpRotaryLimitJoint.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpShape.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSimpleMotor.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSlideJoint.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSpace.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSpaceComponent.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSpaceDebug.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSpaceHash.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSpaceQuery.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSpaceStep.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSpatialIndex.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\chipmunk-7.0.1\src\cpSweep1D.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\SOIL\src\image_DXT.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\SOIL\src\image_helper.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\SOIL\src\SOIL.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\SOIL\src\stb_image_aug.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\sqlite3\shell.c">
+    </ClCompile>
+    <ClCompile Include="src\deps\sqlite3\sqlite3.c">
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
