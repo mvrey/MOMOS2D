@@ -69,6 +69,7 @@ namespace MOMOS {
 		win = glfwCreateWindow(width, height, "MOMOS2D FTW", NULL, NULL);
 		glfwMakeContextCurrent(win);
 		glewInit();
+		glfwSwapInterval(0);
 		glEnable(GL_DEPTH_TEST);
 
 		// set up view
