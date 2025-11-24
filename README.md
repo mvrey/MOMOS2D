@@ -1,5 +1,5 @@
-AncientMythos / MOMOS2D (MOMOS)
-=================================
+MOMOS2D
+==============
 
 Overview
 --------
