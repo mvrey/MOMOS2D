@@ -131,7 +131,7 @@
       <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MinSpace</Optimization>
       <AdditionalIncludeDirectories>include;src;src\deps\glfw3_2_1\include;src\deps\glfw3_2_1\src;src\deps\glew2_0_0\include;src\deps\glew2_0_0\src;src\deps\glm-0_9_8_1;src\deps\chipmunk-7.0.1\include;src\deps\SOIL\src;src\deps\sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_GLFW_WIN32;_GLFW_USE_OPENGL;LUA_COMPAT_MODULE;TINYOBJLOADER_IMPLEMENTATION;WIN32;_WIN32;_WINDOWS;_CONSOLE;_WIN32_WINNT=0x0502;AL_BUILD_LIBRARY;AL_ALEXT_PROTOTYPES;_LARGEFILE_SOURCE;_LARGE_FILES;restrict=;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;strcasecmp=_stricmp;strncasecmp=_strnicmp;AL_LIBTYPE_STATIC;DYNLOAD=1;HAVE_CONFIG_H;ALURE_BUILD_LIBRARY;_DEBUG;GLEW_STATIC;CMAKE_USE_WIN32_THREADS_INIT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_GLFW_WIN32;_GLFW_USE_OPENGL;LUA_COMPAT_MODULE;TINYOBJLOADER_IMPLEMENTATION;WIN32;_WIN32;_WINDOWS;_CONSOLE;_WIN32_WINNT=0x0502;AL_BUILD_LIBRARY;AL_ALEXT_PROTOTYPES;_LARGEFILE_SOURCE;_LARGE_FILES;restrict=;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;strcasecmp=_stricmp;strncasecmp=_strnicmp;AL_LIBTYPE_STATIC;DYNLOAD=1;HAVE_CONFIG_H;ALURE_BUILD_LIBRARY;GLEW_STATIC;CMAKE_USE_WIN32_THREADS_INIT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <FunctionLevelLinking>true</FunctionLevelLinking>
