@@ -21,8 +21,6 @@ namespace MOMOS {
 	void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
 		if (action == GLFW_PRESS)
 			last_key_pressed = key;
-
-		printf("%d\n", last_key_pressed);
 	}
 
 
