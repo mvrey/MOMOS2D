@@ -13,8 +13,12 @@
 #include <MOMOS/resource_manager.h>
 
 namespace MOMOS {
+  // Forward declaration
+  class SpriteAtlas;
+  struct SpriteRegion;
 
   typedef void* SpriteHandle;
+  typedef void* SpriteAtlasHandle;
 
   SpriteHandle SpriteFromFile(const char *path);
   SpriteHandle SpriteFromMemory(int width, int height, const unsigned char *data_RGBA = 0L);
@@ -60,6 +64,36 @@ namespace MOMOS {
   }
 
   void DrawSprite(SpriteHandle img, const SpriteTransform &st);
+
+  // ============================================================================
+  // Sprite Atlas API
+  // ============================================================================
+  
+  // Create a sprite atlas from a texture file (programmatic creation)
+  SpriteAtlasHandle SpriteAtlasCreate(const char* texture_path, bool alpha = true);
+  
+  // Load a sprite atlas from a JSON file (TexturePacker format)
+  // If texture_path is nullptr, it will try to use the path from the JSON metadata
+  SpriteAtlasHandle SpriteAtlasLoadFromJSON(const char* json_path, const char* texture_path = nullptr);
+  
+  // Add a sprite region to an atlas (for programmatic creation)
+  void SpriteAtlasAddRegion(SpriteAtlasHandle atlas, const char* name, int x, int y, int width, int height);
+  
+  // Get sprite dimensions from an atlas region
+  int SpriteAtlasGetWidth(SpriteAtlasHandle atlas, const char* region_name);
+  int SpriteAtlasGetHeight(SpriteAtlasHandle atlas, const char* region_name);
+  
+  // Check if a region exists in the atlas
+  bool SpriteAtlasHasRegion(SpriteAtlasHandle atlas, const char* region_name);
+  
+  // Draw a sprite from an atlas
+  void DrawSpriteFromAtlas(SpriteAtlasHandle atlas, const char* region_name, float x, float y);
+  
+  // Draw a sprite from an atlas with transform
+  void DrawSpriteFromAtlas(SpriteAtlasHandle atlas, const char* region_name, const SpriteTransform &st);
+  
+  // Release an atlas (cleanup)
+  void SpriteAtlasRelease(SpriteAtlasHandle atlas);
 
 } /* MOMOS */
 

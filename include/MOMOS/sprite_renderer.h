@@ -16,9 +16,15 @@ class SpriteRenderer
         void DrawSprite(Texture2D &texture, glm::vec2 position, 
             glm::vec2 size = glm::vec2(10, 10), GLfloat rotate = 0.0f, 
             glm::vec3 color = glm::vec3(1.0f));
+        
+        // Draw sprite with custom UV coordinates (for atlas support)
+        void DrawSpriteWithUV(Texture2D &texture, glm::vec2 position,
+            glm::vec2 size, glm::vec4 uvCoords, GLfloat rotate = 0.0f,
+            glm::vec3 color = glm::vec3(1.0f));
     private:
         Shader shader; 
         GLuint quadVAO;
+        GLuint quadVBO;  // Store VBO for dynamic updates
 
         void initRenderData();
 };

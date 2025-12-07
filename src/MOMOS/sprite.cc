@@ -1,10 +1,13 @@
 #include <MOMOS/sprite.h>
+#include <MOMOS/sprite_atlas.h>
 
 #include <glm/glm.hpp>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <cstring>
 #include <vector>
+#include <map>
+#include <string>
 
 #include <MOMOS/shader.h>
 #include <MOMOS/texture.h>
@@ -12,6 +15,10 @@
 namespace MOMOS {
 
 	SpriteRenderer* renderer = nullptr;
+	
+	// Atlas management
+	static std::map<std::string, SpriteAtlas*> managed_atlases;
+	static std::map<SpriteAtlas*, std::string> atlas_to_name;
 
 namespace {
 
@@ -237,6 +244,158 @@ void SpriteGetPixel(SpriteHandle img, int x, int y, unsigned char outRGBA[4]) {
 			glm::vec2(tex->Width * st.scale_x, tex->Height * st.scale_y),
 			st.angle,
 			glm::vec3(1.0f, 1.0f, 1.0f));
+	}
+
+
+	// ============================================================================
+	// Sprite Atlas API Implementation
+	// ============================================================================
+
+	SpriteAtlasHandle SpriteAtlasCreate(const char* texture_path, bool alpha) {
+		if (texture_path == nullptr) {
+			return nullptr;
+		}
+
+		EnsureRenderer();
+
+		SpriteAtlas* atlas = new SpriteAtlas();
+		if (!atlas->LoadFromFile(texture_path, alpha)) {
+			delete atlas;
+			return nullptr;
+		}
+
+		// Store in managed atlases if using a path-based key
+		std::string key = texture_path;
+		managed_atlases[key] = atlas;
+		atlas_to_name[atlas] = key;
+
+		return atlas;
+	}
+
+	SpriteAtlasHandle SpriteAtlasLoadFromJSON(const char* json_path, const char* texture_path) {
+		if (json_path == nullptr) {
+			return nullptr;
+		}
+
+		EnsureRenderer();
+
+		SpriteAtlas* atlas = new SpriteAtlas();
+		if (!atlas->LoadFromJSON(json_path, texture_path)) {
+			delete atlas;
+			return nullptr;
+		}
+
+		// Store in managed atlases
+		std::string key = json_path;
+		managed_atlases[key] = atlas;
+		atlas_to_name[atlas] = key;
+
+		return atlas;
+	}
+
+	void SpriteAtlasAddRegion(SpriteAtlasHandle atlas, const char* name, int x, int y, int width, int height) {
+		if (atlas == nullptr || name == nullptr) {
+			return;
+		}
+
+		SpriteAtlas* a = static_cast<SpriteAtlas*>(atlas);
+		a->AddRegion(name, x, y, width, height);
+	}
+
+	int SpriteAtlasGetWidth(SpriteAtlasHandle atlas, const char* region_name) {
+		if (atlas == nullptr || region_name == nullptr) {
+			return 0;
+		}
+
+		SpriteAtlas* a = static_cast<SpriteAtlas*>(atlas);
+		const SpriteRegion* region = a->GetRegion(region_name);
+		if (region != nullptr) {
+			return region->width;
+		}
+		return 0;
+	}
+
+	int SpriteAtlasGetHeight(SpriteAtlasHandle atlas, const char* region_name) {
+		if (atlas == nullptr || region_name == nullptr) {
+			return 0;
+		}
+
+		SpriteAtlas* a = static_cast<SpriteAtlas*>(atlas);
+		const SpriteRegion* region = a->GetRegion(region_name);
+		if (region != nullptr) {
+			return region->height;
+		}
+		return 0;
+	}
+
+	bool SpriteAtlasHasRegion(SpriteAtlasHandle atlas, const char* region_name) {
+		if (atlas == nullptr || region_name == nullptr) {
+			return false;
+		}
+
+		SpriteAtlas* a = static_cast<SpriteAtlas*>(atlas);
+		return a->HasRegion(region_name);
+	}
+
+	void DrawSpriteFromAtlas(SpriteAtlasHandle atlas, const char* region_name, float x, float y) {
+		if (atlas == nullptr || region_name == nullptr) {
+			return;
+		}
+
+		SpriteAtlas* a = static_cast<SpriteAtlas*>(atlas);
+		const SpriteRegion* region = a->GetRegion(region_name);
+		if (region == nullptr || a->GetTexture() == nullptr) {
+			return;
+		}
+
+		EnsureRenderer();
+
+		glm::vec4 uvCoords(region->u_min, region->v_min, region->u_max, region->v_max);
+		MOMOS::renderer->DrawSpriteWithUV(*a->GetTexture(),
+			glm::vec2(x, y),
+			glm::vec2(static_cast<float>(region->width), static_cast<float>(region->height)),
+			uvCoords,
+			0.0f,
+			glm::vec3(1.0f, 1.0f, 1.0f));
+	}
+
+	void DrawSpriteFromAtlas(SpriteAtlasHandle atlas, const char* region_name, const SpriteTransform &st) {
+		if (atlas == nullptr || region_name == nullptr) {
+			return;
+		}
+
+		SpriteAtlas* a = static_cast<SpriteAtlas*>(atlas);
+		const SpriteRegion* region = a->GetRegion(region_name);
+		if (region == nullptr || a->GetTexture() == nullptr) {
+			return;
+		}
+
+		EnsureRenderer();
+
+		glm::vec4 uvCoords(region->u_min, region->v_min, region->u_max, region->v_max);
+		MOMOS::renderer->DrawSpriteWithUV(*a->GetTexture(),
+			glm::vec2(st.x, st.y),
+			glm::vec2(static_cast<float>(region->width) * st.scale_x, static_cast<float>(region->height) * st.scale_y),
+			uvCoords,
+			st.angle,
+			glm::vec3(1.0f, 1.0f, 1.0f));
+	}
+
+	void SpriteAtlasRelease(SpriteAtlasHandle atlas) {
+		if (atlas == nullptr) {
+			return;
+		}
+
+		SpriteAtlas* a = static_cast<SpriteAtlas*>(atlas);
+		
+		// Check if it's a managed atlas
+		auto it = atlas_to_name.find(a);
+		if (it != atlas_to_name.end()) {
+			managed_atlases.erase(it->second);
+			atlas_to_name.erase(it);
+		}
+
+		delete a;
 	}
 
 } /* MOMOS */
