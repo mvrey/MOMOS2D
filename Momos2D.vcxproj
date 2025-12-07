@@ -257,6 +257,7 @@
     <ClInclude Include="include\MOMOS\resource_manager.h" />
     <ClInclude Include="include\MOMOS\shader.h" />
     <ClInclude Include="include\MOMOS\sprite.h" />
+    <ClInclude Include="include\MOMOS\sprite_atlas.h" />
     <ClInclude Include="include\MOMOS\sprite_renderer.h" />
     <ClInclude Include="include\MOMOS\texture.h" />
     <ClInclude Include="include\MOMOS\time.h" />
@@ -317,6 +318,8 @@
     <ClCompile Include="src\MOMOS\shader.cc">
     </ClCompile>
     <ClCompile Include="src\MOMOS\sprite.cc">
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\sprite_atlas.cc">
     </ClCompile>
     <ClCompile Include="src\MOMOS\sprite_renderer.cc">
     </ClCompile>

@@ -165,6 +165,9 @@
     <ClInclude Include="include\MOMOS\sprite.h">
       <Filter>include\MOMOS</Filter>
     </ClInclude>
+    <ClInclude Include="include\MOMOS\sprite_atlas.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
     <ClInclude Include="include\MOMOS\sprite_renderer.h">
       <Filter>include\MOMOS</Filter>
     </ClInclude>
@@ -321,6 +324,9 @@
       <Filter>src\MOMOS</Filter>
     </ClCompile>
     <ClCompile Include="src\MOMOS\sprite.cc">
+      <Filter>src\MOMOS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MOMOS\sprite_atlas.cc">
       <Filter>src\MOMOS</Filter>
     </ClCompile>
     <ClCompile Include="src\MOMOS\sprite_renderer.cc">
