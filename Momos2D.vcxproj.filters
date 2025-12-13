@@ -1,71 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="src">
-      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\MOMOS">
-      <UniqueIdentifier>{9435521C-00A0-0693-49DE-B738B587E4E7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps">
-      <UniqueIdentifier>{15105DD2-01DD-B7DD-2AF6-A5851622ED6B}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps\glfw3_2_1">
-      <UniqueIdentifier>{154F49A9-0133-0AFF-6A93-04525696F480}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps\glfw3_2_1\include">
-      <UniqueIdentifier>{15277D59-0137-292A-6AF0-8D48561F18C3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps\glfw3_2_1\include\GLFW">
-      <UniqueIdentifier>{21E67200-8DC9-8140-96CC-AF7C022F4891}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps\glfw3_2_1\src">
-      <UniqueIdentifier>{B93C09BD-A536-320F-8EA3-C81F7A3C987B}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps\glew2_0_0">
-      <UniqueIdentifier>{50F13C5C-3CD5-FDB1-A535-F8049138E833}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps\glew2_0_0\include">
-      <UniqueIdentifier>{50D4A0E7-3CE4-4CB8-A59D-B1D691CC3B51}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps\glew2_0_0\include\GL">
-      <UniqueIdentifier>{1FC30DB8-8BDB-F4E1-5488-847BC05F897B}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps\glew2_0_0\src">
-      <UniqueIdentifier>{74842929-607E-527B-49EB-E88B3584B8E7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include">
-      <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\MOMOS">
-      <UniqueIdentifier>{F00E610C-5CCF-DC42-250A-26C09189211F}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps\chipmunk-7.0.1">
-      <UniqueIdentifier>{511D2BFD-BD54-7394-C65E-D7B732159A8D}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps\chipmunk-7.0.1\include">
-      <UniqueIdentifier>{5171776E-BD54-86AE-C657-B4EA32BA4CFF}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps\chipmunk-7.0.1\include\chipmunk">
-      <UniqueIdentifier>{4C42AB12-38BF-9E55-613C-9F694D183BE9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps\chipmunk-7.0.1\src">
-      <UniqueIdentifier>{F5C85FAD-61D6-8D93-EABC-897E56C9594A}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\fontstash">
-      <UniqueIdentifier>{3FB8A590-ABCE-A326-F445-2F48609B74AE}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps\SOIL">
-      <UniqueIdentifier>{C810B35E-34D1-2E95-FD0B-7812698B7371}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps\SOIL\src">
-      <UniqueIdentifier>{EC9F12B0-58B6-1046-A12D-9C670D83E1CD}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\deps\sqlite3">
-      <UniqueIdentifier>{96F428C0-82ED-4712-AB1F-2D979777271E}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="src\deps\glfw3_2_1\include\GLFW\glfw3.h">
       <Filter>src\deps\glfw3_2_1\include\GLFW</Filter>
     </ClInclude>
@@ -131,54 +66,6 @@
     </ClInclude>
     <ClInclude Include="src\deps\glew2_0_0\include\GL\wglew.h">
       <Filter>src\deps\glew2_0_0\include\GL</Filter>
-    </ClInclude>
-    <ClInclude Include="include\referenced.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\ref_ptr.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\types.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Window.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\MOMOS\draw.h">
-      <Filter>include\MOMOS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\MOMOS\input.h">
-      <Filter>include\MOMOS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\MOMOS\math.h">
-      <Filter>include\MOMOS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\MOMOS\momos.h">
-      <Filter>include\MOMOS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\MOMOS\resource_manager.h">
-      <Filter>include\MOMOS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\MOMOS\shader.h">
-      <Filter>include\MOMOS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\MOMOS\sprite.h">
-      <Filter>include\MOMOS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\MOMOS\sprite_atlas.h">
-      <Filter>include\MOMOS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\MOMOS\sprite_renderer.h">
-      <Filter>include\MOMOS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\MOMOS\texture.h">
-      <Filter>include\MOMOS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\MOMOS\time.h">
-      <Filter>include\MOMOS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\MOMOS\window.h">
-      <Filter>include\MOMOS</Filter>
     </ClInclude>
     <ClInclude Include="src\deps\chipmunk-7.0.1\include\chipmunk\chipmunk.h">
       <Filter>src\deps\chipmunk-7.0.1\include\chipmunk</Filter>
@@ -270,15 +157,6 @@
     <ClInclude Include="src\deps\chipmunk-7.0.1\src\prime.h">
       <Filter>src\deps\chipmunk-7.0.1\src</Filter>
     </ClInclude>
-    <ClInclude Include="include\fontstash\fontstash.h">
-      <Filter>include\fontstash</Filter>
-    </ClInclude>
-    <ClInclude Include="include\fontstash\glfontstash.h">
-      <Filter>include\fontstash</Filter>
-    </ClInclude>
-    <ClInclude Include="include\fontstash\stb_truetype.h">
-      <Filter>include\fontstash</Filter>
-    </ClInclude>
     <ClInclude Include="src\deps\SOIL\src\image_DXT.h">
       <Filter>src\deps\SOIL\src</Filter>
     </ClInclude>
@@ -302,6 +180,63 @@
     </ClInclude>
     <ClInclude Include="src\deps\sqlite3\sqlite3ext.h">
       <Filter>src\deps\sqlite3</Filter>
+    </ClInclude>
+    <ClInclude Include="include\referenced.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ref_ptr.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\types.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Window.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\draw.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\input.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\math.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\momos.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\resource_manager.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\shader.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\sprite.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\sprite_atlas.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\sprite_renderer.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\texture.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\time.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MOMOS\window.h">
+      <Filter>include\MOMOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\fontstash\fontstash.h">
+      <Filter>include\fontstash</Filter>
+    </ClInclude>
+    <ClInclude Include="include\fontstash\glfontstash.h">
+      <Filter>include\fontstash</Filter>
+    </ClInclude>
+    <ClInclude Include="include\fontstash\stb_truetype.h">
+      <Filter>include\fontstash</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -551,5 +486,73 @@
     <ClCompile Include="src\deps\sqlite3\sqlite3.c">
       <Filter>src\deps\sqlite3</Filter>
     </ClCompile>
+    <ClCompile Include="src\MOMOS\audio.cc">
+      <Filter>src\MOMOS</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{6961a828-b086-410f-9246-662a0a1a43b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MOMOS">
+      <UniqueIdentifier>{2f607625-dfaf-4835-9f10-08c160399206}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps">
+      <UniqueIdentifier>{b77c7d8e-483b-44b3-927b-10552f761fcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glfw3_2_1">
+      <UniqueIdentifier>{f2d797bc-ca0b-4997-a575-ad36d11946f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glfw3_2_1\include">
+      <UniqueIdentifier>{9201f764-a394-4b6a-bfd8-4cc12f7b7a18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glfw3_2_1\include\GLFW">
+      <UniqueIdentifier>{b7750dc8-1b25-44c1-b036-4264009685a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glfw3_2_1\src">
+      <UniqueIdentifier>{fc18c0be-ac62-4acf-977a-af4cfcf21d9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glew2_0_0">
+      <UniqueIdentifier>{20ee26c9-0a64-45b7-bc76-e62f27f5bfee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glew2_0_0\include">
+      <UniqueIdentifier>{668c74ee-b451-4ae8-88e9-77bf8036683f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glew2_0_0\include\GL">
+      <UniqueIdentifier>{8e57a452-0474-46c8-b4bc-9fa76fbef7e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\glew2_0_0\src">
+      <UniqueIdentifier>{6ec50af9-3288-45c9-a3e5-1568f6434121}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\chipmunk-7.0.1">
+      <UniqueIdentifier>{2f20ed8e-bf2b-44ac-bc20-9e73b1ce707f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\chipmunk-7.0.1\include">
+      <UniqueIdentifier>{0e89da84-c138-46a2-b2d7-f5e7243f56f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\chipmunk-7.0.1\include\chipmunk">
+      <UniqueIdentifier>{cf8b2ba9-5d71-4de5-8316-1c9d51f48248}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\chipmunk-7.0.1\src">
+      <UniqueIdentifier>{858c3aea-2f65-47cb-b099-31fa3bce67e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\SOIL">
+      <UniqueIdentifier>{24491ca3-ca1d-4cf2-be12-03244a9771a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\SOIL\src">
+      <UniqueIdentifier>{6a42ef5f-7430-4545-a8f1-48e3f1eb0c2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\deps\sqlite3">
+      <UniqueIdentifier>{072b3ec3-3d3d-4ace-b61b-b1412682138c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{a8eb9180-6179-4a41-b266-746749fcf1d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\MOMOS">
+      <UniqueIdentifier>{91ed827b-b0c9-44cc-bfbf-b53fd410c27d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\fontstash">
+      <UniqueIdentifier>{668d26a6-d6b7-48f9-8eef-5fd981d9a142}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

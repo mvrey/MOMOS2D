@@ -18,10 +18,10 @@ SpriteRenderer::SpriteRenderer(Shader &shader)
 SpriteRenderer::~SpriteRenderer()
 {
 	if (this->quadVAO != 0) {
-		glDeleteVertexArrays(1, &this->quadVAO);
+	glDeleteVertexArrays(1, &this->quadVAO);
 	}
 	if (this->quadVBO != 0) {
-		glDeleteBuffers(1, &this->quadVBO);
+	glDeleteBuffers(1, &this->quadVBO);
 	}
 	if (this->batchVAO != 0) {
 		glDeleteVertexArrays(1, &this->batchVAO);
@@ -265,7 +265,7 @@ void SpriteRenderer::renderBatch(GLuint textureID, const std::vector<SpriteBatch
 	glDisableVertexAttribArray(3);
 	glDisableVertexAttribArray(4);
 	glBindVertexArray(0);
-	
+
 	//Set back default program
 	glUseProgram(0);
 }

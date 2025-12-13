@@ -65,7 +65,7 @@ class SpriteRenderer
         
         // Maximum batch size (can be adjusted)
         static const size_t MAX_BATCH_SIZE = 10000; // Max sprites per batch
-        
+
         void initRenderData();
         void initBatchRenderData();
         void cleanupBatchRenderData();

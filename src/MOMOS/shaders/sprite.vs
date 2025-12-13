@@ -38,7 +38,7 @@ void main()
         gl_Position = projection * vec4(rotatedPos, 0.0, 1.0);
     } else {
         // Legacy path (for backward compatibility)
-        TexCoords = vertex.zw;
-        gl_Position = projection * model * vec4(vertex.xy, 0.0, 1.0);
+    TexCoords = vertex.zw;
+    gl_Position = projection * model * vec4(vertex.xy, 0.0, 1.0);
     }
 }

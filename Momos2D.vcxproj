@@ -307,6 +307,7 @@
   <ItemGroup>
     <ClCompile Include="src\main.cc">
     </ClCompile>
+    <ClCompile Include="src\MOMOS\audio.cc" />
     <ClCompile Include="src\MOMOS\draw.cc">
     </ClCompile>
     <ClCompile Include="src\MOMOS\input.cc">
