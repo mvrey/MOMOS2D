@@ -74,7 +74,8 @@ int NormalizeMouseButton(int button_id) {
 		int key_code = static_cast<unsigned char>(key);
 		RefreshKeyState(key_code);
 		const KeyState& state = g_key_states[key_code];
-		return IsPressedState(state.current) && !IsPressedState(state.previous);
+		// Only trigger on first frame pressed (RELEASE -> PRESS transition), ignore GLFW_REPEAT
+		return state.current == GLFW_PRESS && state.previous == GLFW_RELEASE;
 	}
 
 
@@ -96,7 +97,8 @@ int NormalizeMouseButton(int button_id) {
 		int key_code = static_cast<int>(key);
 		RefreshKeyState(key_code);
 		const KeyState& state = g_key_states[key_code];
-		return IsPressedState(state.current) && !IsPressedState(state.previous);
+		// Only trigger on first frame pressed (RELEASE -> PRESS transition), ignore GLFW_REPEAT
+		return state.current == GLFW_PRESS && state.previous == GLFW_RELEASE;
 	}
 
 
