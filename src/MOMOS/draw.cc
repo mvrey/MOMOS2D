@@ -19,6 +19,28 @@ namespace MOMOS {
 	FONScontext* fs = NULL;
 	int font;
 
+	static BlendMode current_blend_mode = BlendMode::Normal;
+
+	void DrawSetBlendMode(BlendMode mode) {
+		current_blend_mode = mode;
+	}
+
+	void DrawRect(float x, float y, float w, float h) {
+		glEnable(GL_BLEND);
+		if (current_blend_mode == BlendMode::Additive) {
+			glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+		} else {
+			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		}
+		glBegin(GL_QUADS);
+		glVertex2f(x,     win_height - y);
+		glVertex2f(x + w, win_height - y);
+		glVertex2f(x + w, win_height - (y + h));
+		glVertex2f(x,     win_height - (y + h));
+		glEnd();
+		glDisable(GL_BLEND);
+	}
+
 	void DrawBegin() {
 		glPointSize(10);
 		glLineWidth(2.5);

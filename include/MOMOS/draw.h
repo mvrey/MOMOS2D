@@ -10,6 +10,16 @@
 
 namespace MOMOS {
 
+  enum class BlendMode {
+    Normal,   // SRC_ALPHA, ONE_MINUS_SRC_ALPHA
+    Additive  // SRC_ALPHA, ONE  (for light/glow sprites)
+  };
+
+  void DrawSetBlendMode(BlendMode mode);
+
+  // Filled rectangle at (x,y) with given width/height. Respects current fill color and alpha.
+  void DrawRect(float x, float y, float w, float h);
+
   // Call this before start sending drawing commands
   void DrawBegin();
   // Call this after all drawing is done
