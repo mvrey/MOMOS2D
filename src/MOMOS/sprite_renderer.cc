@@ -2,6 +2,8 @@
 #include <GL/glew.h>
 #include <algorithm>
 
+float SpriteRenderer::sprite_alpha_ = 1.0f;
+
 SpriteRenderer::SpriteRenderer(Shader &shader)
 {
 	this->shader = shader;
@@ -133,6 +135,7 @@ void SpriteRenderer::renderImmediate(Texture2D &texture, glm::vec2 position, glm
 
 	this->shader.SetMatrix4("model", model);
 	this->shader.SetVector3f("spriteColor", color);
+	this->shader.SetFloat("spriteAlpha", sprite_alpha_);
 
 	// Update VBO with UV coordinates
 	GLfloat vertices[] = {
@@ -250,6 +253,7 @@ void SpriteRenderer::renderBatch(GLuint textureID, const std::vector<SpriteBatch
 	if (!sprites.empty()) {
 		this->shader.SetVector3f("spriteColor", sprites[0].color);
 	}
+	this->shader.SetFloat("spriteAlpha", sprite_alpha_);
 	
 	// Draw all sprites using instanced rendering
 	glDrawArraysInstanced(GL_TRIANGLES, 0, 6, static_cast<GLsizei>(sprites.size()));

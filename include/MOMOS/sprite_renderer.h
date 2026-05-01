@@ -50,8 +50,14 @@ class SpriteRenderer
         
         // Check if batching is enabled
         bool IsBatching() const { return batching_enabled_; }
-        
+
+        // Global sprite alpha modulator. Multiplies the texture's per-pixel alpha
+        // before blending. Default is 1.0 (no change). Reset after use.
+        static void SetSpriteAlpha(float alpha) { sprite_alpha_ = alpha; }
+        static float GetSpriteAlpha() { return sprite_alpha_; }
+
     private:
+        static float sprite_alpha_;
         Shader shader; 
         GLuint quadVAO;
         GLuint quadVBO;  // Store VBO for dynamic updates

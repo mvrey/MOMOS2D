@@ -225,6 +225,10 @@ void SpriteGetPixel(SpriteHandle img, int x, int y, unsigned char outRGBA[4]) {
 		MOMOS::renderer->DrawSprite(*tex, glm::vec2(x,y), glm::vec2(tex->Width, tex->Height), 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
 	}
 
+	void DrawSetSpriteAlpha(float alpha) {
+		SpriteRenderer::SetSpriteAlpha(alpha);
+	}
+
 
 	void DrawSpriteWithMatrix(SpriteHandle img, const float transform_matrix[9]) {
 		Texture2D* tex = static_cast<Texture2D*>(img);

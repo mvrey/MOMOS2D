@@ -33,6 +33,11 @@ namespace MOMOS {
   
   void DrawSprite(SpriteHandle img, float x, float y);
 
+  // Sets a global alpha multiplier applied to subsequent DrawSprite calls. The
+  // texture's per-pixel alpha is multiplied by this value before blending.
+  // Default is 1.0; reset to 1.0 after drawing the affected sprite.
+  void DrawSetSpriteAlpha(float alpha);
+
   // Draws an Sprite with a transformation matrix. The matrix values are specified as
   // a column-major 3x3 matrix. Only six values are used as shown:
   //     | m1 m4 m7 |
