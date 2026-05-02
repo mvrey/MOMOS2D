@@ -25,6 +25,24 @@ namespace MOMOS {
 		current_blend_mode = mode;
 	}
 
+	void DrawCircle(float cx, float cy, float radius, int segments) {
+		glEnable(GL_BLEND);
+		if (current_blend_mode == BlendMode::Additive) {
+			glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+		} else {
+			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		}
+		const float pi2 = 6.28318530718f;
+		glBegin(GL_TRIANGLE_FAN);
+		glVertex2f(cx, win_height - cy);
+		for (int i = 0; i <= segments; ++i) {
+			float angle = static_cast<float>(i) * pi2 / static_cast<float>(segments);
+			glVertex2f(cx + radius * cosf(angle), win_height - (cy + radius * sinf(angle)));
+		}
+		glEnd();
+		glDisable(GL_BLEND);
+	}
+
 	void DrawRect(float x, float y, float w, float h) {
 		glEnable(GL_BLEND);
 		if (current_blend_mode == BlendMode::Additive) {
